@@ -6,4 +6,4 @@ A = float(input())
 B = float(input())
 media = ((A*3.5) + (B*7.5)) / 11
 
-print(f"MEDIA = {media:.5f}")
+print(f"MEDIA = {media:.5f}") # faz o print ajustando o numero de casas decimais através de "f-strings"
