@@ -6,4 +6,4 @@ A = int(input())
 B = int(input())
 PROD = A * B
 
-print(f"PROD = {PROD}")
+print(f"PROD = {PROD}") # faz o print ajustando o numero de casas decimais através de "f-strings"
