@@ -5,4 +5,4 @@ A = int(input())
 B = int(input())
 SOMA = A + B
 
-print(f"SOMA = {SOMA}")
+print(f"SOMA = {SOMA}") # faz o print ajustando o numero de casas decimais através de "f-strings"
