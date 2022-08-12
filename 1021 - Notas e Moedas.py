@@ -87,7 +87,58 @@ print(f'{um_cent} moeda(s) de R$ 0.01')
 
 
 
-# versão 2: Wrong answer (10%)
+# versão 2: Wrong answer (5%)
+
+#EX: 576.73
+
+reais, centavos = input().split('.')
+
+reais = int(reais)
+centavos = int(centavos)
+
+# Opcionalmente aos passos anteriores, seria possível fazer: reais, centavos = map(int, input().split('.'))
+
+centavos = centavos + reais*100 # voce faz isso p/ trabalhar com apenas uma variável e p/ não trabalhar com float
+# --> 57673
+
+print('NOTAS:')
+print(f'{centavos//10000} nota(s) de R$ 100.00') # 100 * 100 (de lá de cima)  ---------- 57673 // 10000 = 5
+centavos = centavos%10000 # --> RESTO = 7673
+
+print(f'{centavos//5000} nota(s) de R$ 50.00') # 50 * 100 ---------- 7673 // 5000 = 1
+centavos = centavos%5000 # --> RESTO = 2673
+
+print(f'{centavos//2500} nota(s) de R$ 25.00') # 25 * 100 ---------- 2673 // 2500 = 1
+centavos = centavos%2500 # --> RESTO = 173
+
+print(f'{centavos//1000} nota(s) de R$ 10.00') # --> 173 // 1000 = 0 (pois estamos fazendo divisão inteira)
+centavos = centavos%1000 # --> RESTO = 173
+
+print(f'{centavos//200} nota(s) de R$ 2.00') # --> 173 // 200 = 0
+centavos = centavos%200 # --> RESTO = 173
+
+print('MOEDAS:')
+print(f'{centavos//100} moeda(s) de R$ 1.00') # --> 173 // 100 = 1
+centavos = centavos%100 # --> RESTO = 73
+
+print(f'{centavos//50} moeda(s) de R$ 0.50') # --> 73 // 50 = 1
+centavos = centavos%50 # --> RESTO = 23
+
+print(f'{centavos//25} moeda(s) de R$ 0.25') # --> 23 // 25 = 0
+centavos = centavos%25 # --> RESTO = 23
+
+print(f'{centavos//10} moeda(s) de R$ 0.10') # --> 23 // 25 = 0
+centavos = centavos%10
+
+print(f'{centavos//5} moeda(s) de R$ 0.05') # --> 23 // 5 = 4
+centavos = centavos%5 # --> RESTO = 3
+
+print(f'{centavos//1} moeda(s) de R$ 0.01') # --> 3 // 1 = 3
+centavos = centavos%1 # --> RESTO = 0
+
+
+
+# versão 3: Wrong answer (10%)
 
 from decimal import *
 
@@ -114,7 +165,7 @@ for moeda in moedas:
     
     
 
-# versão 3: Time limit exceeded
+# versão 4: Time limit exceeded
 
 import math
 from decimal import *
